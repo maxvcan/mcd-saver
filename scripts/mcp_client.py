@@ -9,11 +9,14 @@
 
 仅用于验证"真实使用麦当劳 MCP 能力"，不依赖 WorkBuddy 也可运行。
 
-安装依赖：
-    pip install mcp
+安装依赖（已在 mcp 2.3.0 验证通过）：
+    pip install "mcp>=2.0"
 
 运行（Token 走环境变量，绝不硬编码）：
+    # macOS / Linux
     export MCD_MCP_TOKEN="你的麦当劳MCP Token"
+    # Windows PowerShell
+    $env:MCD_MCP_TOKEN="你的麦当劳MCP Token"
     python scripts/mcp_client.py
 """
 
@@ -21,7 +24,8 @@ import asyncio
 import os
 
 from mcp import ClientSession
-from mcp.client.streamable_http import streamablehttp_client
+from mcp.client.streamable_http import streamable_http_client
+import httpx2
 
 
 MCD_MCP_URL = "https://mcp.mcd.cn"
@@ -34,10 +38,12 @@ async def main() -> None:
 
     headers = {"Authorization": f"Bearer {token}"}
 
-    async with streamablehttp_client(MCD_MCP_URL, headers=headers) as (
+    async with streamable_http_client(
+        MCD_MCP_URL,
+        http_client=httpx2.AsyncClient(headers=headers, timeout=30.0),
+    ) as (
         read_stream,
         write_stream,
-        _,
     ):
         async with ClientSession(read_stream, write_stream) as session:
             await session.initialize()
