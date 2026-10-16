@@ -23,7 +23,7 @@
 
 **WorkBuddy 行动**：抓取 `mcd-mcp-server` README，整理出：
 - 接入地址 `https://mcp.mcd.cn`，Streamable HTTP + Bearer Token，限流 600 次/分钟；
-- 已开放 **33 个 Tool**，覆盖点餐、领券、活动日历、积分抽奖、商城、主题活动等。
+- 已开放 **35 个 Tool**，覆盖点餐、领券、活动日历、积分抽奖、商城、主题活动等。
 - 据此在 `MCP_INTEGRATION.md` 中锁定本 Skill 实际调用的 17 个 Tool。
 
 ## 阶段三：设计 Skill 工作流
@@ -38,7 +38,7 @@
 - `CONTEST_DECLARATION.md`：原创性 / 合规性 / 敏感信息三块声明，明确不含真实 Token、无刷券绕过限流；
 - `MCP_INTEGRATION.md`：Server 信息、17 个 Tool 映射表、典型调用流程图、业务价值；
 - `mcp-config.example.json`：仅 `${MCD_MCP_TOKEN}` 占位符，无硬编码密钥；
-- `references/tools-reference.md`：33 个 Tool 速查；
+- `references/tools-reference.md`：35 个 Tool 速查；
 - `scripts/mcp_client.py`：用官方 `mcp` SDK 直连 MCP 的演示脚本（list_tools + now-time-info 示例）。
 
 ## 阶段五：自检与交付
