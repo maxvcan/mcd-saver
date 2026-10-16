@@ -37,7 +37,7 @@
 | `query-lottery-info` | 抽奖活动信息 | 场景 D：抽奖规则/奖品 |
 | `draw-lottery` | 积分抽奖 | 场景 D：用户确认后抽奖（写操作，需确认） |
 
-> 完整 33 个 Tool 速查见 `references/tools-reference.md`。
+> 完整 35 个 Tool 速查见 `references/tools-reference.md`。
 
 ## 三、典型调用流程（场景 B：点最省的一单）
 
