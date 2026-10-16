@@ -88,7 +88,7 @@ mcd-saver/
 ├── mcp-config.example.json   # 脱敏后的 MCP 配置示例（仅环境变量占位符）
 ├── workbuddy.md              # WorkBuddy 开发对话上下文（专项奖材料）
 ├── references/
-│   └── tools-reference.md    # mcd-mcp 全部 33 个 Tool 速查
+│   └── tools-reference.md    # mcd-mcp 全部 35 个 Tool 速查
 └── scripts/
     └── mcp_client.py         # 使用官方 mcp SDK 直连 MCP 的演示脚本
 ```
